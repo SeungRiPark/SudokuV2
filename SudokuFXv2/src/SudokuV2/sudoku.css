@@ -1,0 +1,49 @@
+.root {
+	-fx-padding: 5px;
+	-fx-background-color: #F6F6F6;
+	-fx-padding: 0;
+}
+
+.cell {
+	-fx-background-color: #EAEAEA;
+	-fx-padding: 3;
+}
+
+.cell#right {
+	-fx-border-color: black;
+	-fx-border-width: 0 1 0 0;
+}
+
+.cell#bottom {
+	-fx-border-color: black;
+	-fx-border-width: 0 0 1 0;
+}
+
+.cell#rc22 {
+	-fx-border-color: black;
+	-fx-border-width: 0 1 1 0;
+}
+
+.text-field {
+	-fx-alignment: center;
+}
+
+#Qes {
+	-fx-background-color: #f0f8ff;
+}
+
+#Ans {
+	-fx-background-color: #ffffff;
+}
+
+#Dif {
+	-fx-background-color: #ff0000;
+}
+
+#Che {
+	-fx-background-color: #afeeee;
+}
+
+#Ans:hover, #Dif:hover, #Che:hover {
+	-fx-border-color: #aaffee
+}
