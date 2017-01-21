@@ -6,8 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 //import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -22,6 +22,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 //import javafx.scene.paint.Color;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 public class Main extends Application {
 
@@ -36,8 +40,10 @@ public class Main extends Application {
 		MenuBar menuBar = new MenuBar();						// 메뉴 바를 만든다. 
 
 		Scene scene = new Scene(new VBox(), 400, 400);			// Scene을 만들 때 내부 를 수성할 Vbox를 생성
+		
 		primaryStage.setTitle("SUDOKU made by VICDev");			// 타이틀을 생성한다.
 
+		
 		sdoku.inputNum();	// 문제를 만듬
 
 		VBox vbox = new VBox(0);				// 내부를 구성할 vbox를 생성
@@ -117,7 +123,7 @@ public class Main extends Application {
 			@Override
 			public void handle(ActionEvent event) {
 				Sudoku sdk = Sudoku.getInstance();
-				sdk.setNum(40);									// 빈곳의 개수를 40으로 설정
+				sdk.setNum(45);									// 빈곳의 개수를 40으로 설정
 				sdk.inputNum();									// 문제를 새로 만든다.
 				newGame();								
 			}
@@ -245,12 +251,25 @@ public class Main extends Application {
 			}
 		}
 		if(tok && token){
+//			Stage popup = new Stage();
+//			GridPane grid = new GridPane();
+//			Label label = new Label();
+//			label.setText("test Success");
+//			grid.getChildren().add(label);
+//			Scene sen = new Scene(grid,200,200);
+//			popup.setScene(sen);
+//			popup.showAndWait();
+			
+			
+			
 //			Alert alert1 = new Alert(AlertType.INFORMATION);
 //			alert1.setTitle("완료");
 //			alert1.setHeaderText(null);
 //			alert1.setContentText("축하합니다. \n게임을 완료하셨습니다.");
 //			token = false;
 //			alert1.showAndWait();
+			
+			
 		}
 	}
 
