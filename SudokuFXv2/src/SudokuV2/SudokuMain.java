@@ -244,7 +244,7 @@ public class SudokuMain extends Application {
 		}
 		if(tok && token){
 			Stage pop = new Stage();
-			GridPane root = new GridPane();
+			GridPane rootAlert = new GridPane();
 			Button ok = new Button();
 			ok.setText("OK");
 			final Label str = new Label();
@@ -256,10 +256,12 @@ public class SudokuMain extends Application {
 					sScene.close();
 				}
 			});
-			root.add(str, 1, 1);
-			root.add(ok, 1, 3);
+			ok.setId("ok");
+			rootAlert.add(str, 2, 0,1,2);
+			rootAlert.add(ok, 2, 4, 2, 1);
+			rootAlert.setAlignment(Pos.CENTER);
 			
-			Scene scene = new Scene(root,200,100);
+			Scene scene = new Scene(rootAlert,200,100);
 			
 			pop.setScene(scene);
 			
