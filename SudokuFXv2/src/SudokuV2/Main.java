@@ -174,8 +174,6 @@ public class Main extends Application {
 		menuLevel.getItems().addAll(low,middle,high);
 		menuBar.getMenus().addAll(menuFile,menuLevel);
 
-
-
 		// 키이벤트를 찾는 반복문
 		for(int inx=0;inx < textField.length; inx++){
 			for(int jnx = 0; jnx< textField[inx].length; jnx++ ){
@@ -197,6 +195,7 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
+	// 새로운 게임을 만드는 메소드
 	private void newGame() {
 		Sudoku sdoku = Sudoku.getInstance();
 		sdoku.inputNum();
