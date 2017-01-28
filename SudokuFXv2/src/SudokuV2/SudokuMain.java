@@ -1,33 +1,26 @@
 package SudokuV2;
 
 import javafx.application.Application;
-//import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-//import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-//import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyEvent;
-//import javafx.scene.layout.Background;
-//import javafx.scene.layout.BackgroundFill;
-//import javafx.scene.layout.CornerRadii;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-//import javafx.scene.paint.Color;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+
+public class SudokuMain extends Application {
 
 	TextField[][] textField = new TextField[9][9];				 // 텍스트 입 출력 창
 	boolean tok;
@@ -35,8 +28,8 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		Sudoku sdoku = Sudoku.getInstance();						// 문제를 만드는 객체
-		GridPane board = new GridPane();							// grid 타입으로 전체 레이아웃을 구성	
+		Sudoku sdoku = Sudoku.getInstance();						// 문제를 만드는 객체(SingleToen을 사요)
+		GridPane board = new GridPane();							// GridPane 타입으로 전체 레이아웃을 구성	
 		MenuBar menuBar = new MenuBar();						// 메뉴 바를 만든다. 
 
 		Scene scene = new Scene(new VBox(), 400, 400);			// Scene을 만들 때 내부 를 수성할 Vbox를 생성
@@ -250,24 +243,28 @@ public class Main extends Application {
 			}
 		}
 		if(tok && token){
-//			Stage popup = new Stage();
-//			GridPane grid = new GridPane();
-//			Label label = new Label();
-//			label.setText("test Success");
-//			grid.getChildren().add(label);
-//			Scene sen = new Scene(grid,200,200);
-//			popup.setScene(sen);
-//			popup.showAndWait();
+			Stage pop = new Stage();
+			GridPane root = new GridPane();
+			Button ok = new Button();
+			ok.setText("OK");
+			final Label str = new Label();
+			str.setText("축하합니다. \n게임을 완료하셨습니다.");
+			ok.setOnMousePressed(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					Stage sScene = (Stage) str.getScene().getWindow();
+					sScene.close();
+				}
+			});
+			root.add(str, 1, 1);
+			root.add(ok, 1, 3);
 			
+			Scene scene = new Scene(root,200,100);
 			
+			pop.setScene(scene);
 			
-//			Alert alert1 = new Alert(AlertType.INFORMATION);
-//			alert1.setTitle("완료");
-//			alert1.setHeaderText(null);
-//			alert1.setContentText("축하합니다. \n게임을 완료하셨습니다.");
-//			token = false;
-//			alert1.showAndWait();
-			
+			pop.show();
+			token = false;
 			
 		}
 	}

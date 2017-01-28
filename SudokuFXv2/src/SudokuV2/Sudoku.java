@@ -4,7 +4,7 @@ class Sudoku {
 	
 	private  int[][] arr = new int[9][9];
 	private  int[][] sArr;
-	private int num = 60;
+	private int num = 70;
 	private static Sudoku sdk = new Sudoku();
 	
 	public int getArr(int i, int j) {
